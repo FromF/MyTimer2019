@@ -10,11 +10,8 @@ import UIKit
 
 class SettingViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate  {
 
-    // UIPickerViewに表示するデータをArrayで作成
-    let settingArray : [Int] = [10,20,30,40,50,60]
-    
-    // 設定値を覚えるキーを設定
-    let settingKey = "timer_value"
+    // 設定マネージャーのインスタンス取得
+    let settingManager = SettingManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +22,11 @@ class SettingViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         timerSettingPicker.delegate = self
         timerSettingPicker.dataSource = self
         
-        // UserDefaultsの取得
-        let settings = UserDefaults.standard
-        let timerValue = settings.integer(forKey: settingKey)
+        let timerValue = settingManager.timerVaue
         
         // Pickerの選択を合わせる
-        for row in 0..<settingArray.count {
-            if settingArray[row] == timerValue {
+        for row in 0..<settingManager.settingArray.count {
+            if settingManager.settingArray[row] == timerValue {
                 timerSettingPicker.selectRow(row, inComponent: 0, animated: true)
             }
         }
@@ -63,20 +58,17 @@ class SettingViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     // UIPickerViewの行数を取得
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return settingArray.count
+        return settingManager.settingArray.count
     }
     
     // UIPickerViewの表示する内容を設定
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
-        return String(settingArray[row])
+        return String(settingManager.settingArray[row])
     }
     
     // picker選択時に実行
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // UserDefaultsの設定
-        let settings = UserDefaults.standard
-        settings.setValue(settingArray[row], forKey: settingKey)
-        settings.synchronize()
+        settingManager.timerVaue = settingManager.settingArray[row]
     }
     
 }

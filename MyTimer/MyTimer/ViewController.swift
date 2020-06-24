@@ -12,6 +12,8 @@ class ViewController: UIViewController , TimerManagerDelegate {
     
     // タイマーマネージャーのインスタンス取得
     let timerManager = TimerManager.shared
+    // 設定マネージャーのインスタンス取得(初期化を促すために)
+    let settingManager = SettingManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,8 @@ class ViewController: UIViewController , TimerManagerDelegate {
     @IBAction func settingButtonAction(_ sender: Any) {
         // タイマー停止
         timerManager.stop()
+        // 画面遷移を行う
+        performSegue(withIdentifier: "goSetting", sender: nil)
     }
  
     @IBAction func startButtonAction(_ sender: Any) {

@@ -22,29 +22,15 @@ class TimerManager: NSObject {
     private var timer : Timer?
     // カウント(経過時間)の変数を作成
     private var count = 0
-    
+        
     // カウントダウン時間
-    var timerValue = 0
+    var timerValue = 10
     
     // 残り時間(getterを作る)
     var remainCount:Int {
         get {
             return timerValue - count
         }
-    }
-    
-    override init() {
-        super.init()
-        
-        // いったんインスタンス生成時にカウントダウン時間を取得する
-        // 後で、SettingManager.swiftを作ったら削除する予定
-        // 設定値を扱うキーを設定
-        let settingKey = "timer_value"
-        // UserDefaultsのインスタンスを生成
-        let settings = UserDefaults.standard
-        // UserDefaultsに初期値を登録
-        settings.register(defaults: [settingKey:10])
-        timerValue = settings.integer(forKey: settingKey)
     }
     
     /// タイマー開始

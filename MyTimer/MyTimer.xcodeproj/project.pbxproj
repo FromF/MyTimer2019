@@ -14,6 +14,7 @@
 		82BC462A2310837A00E1178B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82BC46292310837A00E1178B /* Assets.xcassets */; };
 		82BC462D2310837A00E1178B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82BC462B2310837A00E1178B /* LaunchScreen.storyboard */; };
 		82BC46352310885000E1178B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BC46342310885000E1178B /* SettingViewController.swift */; };
+		9D42DA6924A2D3DF00FB1D2D /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D42DA6824A2D3DF00FB1D2D /* TimerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		82BC462C2310837A00E1178B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82BC462E2310837A00E1178B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82BC46342310885000E1178B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		9D42DA6824A2D3DF00FB1D2D /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				82BC46242310837A00E1178B /* ViewController.swift */,
 				82BC46262310837A00E1178B /* Main.storyboard */,
 				82BC46342310885000E1178B /* SettingViewController.swift */,
+				9D42DA6824A2D3DF00FB1D2D /* TimerManager.swift */,
 				82BC46292310837A00E1178B /* Assets.xcassets */,
 				82BC462B2310837A00E1178B /* LaunchScreen.storyboard */,
 				82BC462E2310837A00E1178B /* Info.plist */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82BC46252310837A00E1178B /* ViewController.swift in Sources */,
+				9D42DA6924A2D3DF00FB1D2D /* TimerManager.swift in Sources */,
 				82BC46212310837A00E1178B /* AppDelegate.swift in Sources */,
 				82BC46232310837A00E1178B /* SceneDelegate.swift in Sources */,
 				82BC46352310885000E1178B /* SettingViewController.swift in Sources */,

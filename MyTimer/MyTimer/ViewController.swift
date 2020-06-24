@@ -64,8 +64,7 @@ class ViewController: UIViewController , TimerManagerDelegate {
     
     // 画面切り替えのタイミングで処理を行なう
     override func viewDidAppear(_ animated: Bool) {
-        // タイマークリアする
-        timerManager.clear()
+        //リファクタリングに処理なし
     }
     
 }

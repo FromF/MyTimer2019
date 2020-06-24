@@ -24,10 +24,10 @@ class TimerManager: NSObject {
     private var count = 0
         
     // カウントダウン時間
-    var timerValue = 10
+    var timerValue = 0
     
     // 残り時間(getterを作る)
-    var remainCount:Int {
+    private var remainCount:Int {
         get {
             return timerValue - count
         }

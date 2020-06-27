@@ -9,15 +9,15 @@
 import UIKit
 
 class SettingManager: NSObject {
+    ///シングルトン
+    static let shared = SettingManager()
+    
     // UIPickerViewに表示するデータをArrayで作成
     let settingArray : [Int] = [10,20,30,40,50,60]
     
     // 設定値を覚えるキーを設定
     private let settingKey = "timer_value"
     
-    // タイマーマネージャーのインスタンス取得
-    private let timerManager = TimerManager.shared
-
     // カウントダウン時間
     var timerVaue:Int {
         set(p) {
@@ -26,6 +26,8 @@ class SettingManager: NSObject {
             settings.set(p, forKey: settingKey)
             settings.synchronize()
 
+            // タイマーマネージャーのインスタンス取得
+            let timerManager = TimerManager.shared
             // タイマー時間をタイマーマネージャーに代入する
             timerManager.timerValue = p
             // タイマーマネージャーにクリア指示して値が変わったことをわかるようにする
@@ -46,9 +48,6 @@ class SettingManager: NSObject {
         let settings = UserDefaults.standard
         // UserDefaultsに初期値を登録
         settings.register(defaults: [settingKey:10])
-        
-        // タイマー時間をタイマーマネージャーに代入する
-        timerManager.timerValue = timerVaue
     }
 
 }

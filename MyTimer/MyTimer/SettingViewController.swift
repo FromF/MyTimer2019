@@ -11,7 +11,7 @@ import UIKit
 class SettingViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate  {
 
     // 設定マネージャーのインスタンス取得
-    let settingManager = SettingManager()
+    let settingManager = SettingManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()

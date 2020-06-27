@@ -15,6 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // タイマーマネージャーのインスタンス取得
+        let timerManager = TimerManager.shared
+        // 設定マネージャーのインスタンス取得
+        let settingManager = SettingManager.shared
+        // 設定マネージャーで保持している設定時間をタイマーマネージャーに渡す
+        timerManager.timerValue = settingManager.timerVaue
         return true
     }
 

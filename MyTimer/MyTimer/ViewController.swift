@@ -12,8 +12,6 @@ class ViewController: UIViewController , TimerManagerDelegate {
     
     // タイマーマネージャーのインスタンス取得
     let timerManager = TimerManager.shared
-    // 設定マネージャーのインスタンス取得(初期化を促すために)
-    let settingManager = SettingManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
